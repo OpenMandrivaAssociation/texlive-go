@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/go
+# catalog-date 2010-02-19 00:25:14 +0100
+# catalog-license pd
+# catalog-version undef
 Name:		texlive-go
 Version:	20100219
 Release:	1
@@ -74,6 +80,7 @@ standard 19x19 board; the fonts are written in MetaFont.
 %{_texmfdistdir}/tex/latex/go/go.sty
 #- source
 %doc %{_texmfdistdir}/source/latex/go/gomaps.ltx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -84,3 +91,5 @@ standard 19x19 board; the fonts are written in MetaFont.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
