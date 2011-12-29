@@ -17,26 +17,17 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 The macros provide for nothing more complicated than the
 standard 19x19 board; the fonts are written in MetaFont.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -81,7 +72,6 @@ standard 19x19 board; the fonts are written in MetaFont.
 %{_texmfdistdir}/tex/latex/go/go.sty
 #- source
 %doc %{_texmfdistdir}/source/latex/go/gomaps.ltx
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -92,5 +82,3 @@ standard 19x19 board; the fonts are written in MetaFont.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
