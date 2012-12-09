@@ -82,3 +82,17 @@ standard 19x19 board; the fonts are written in MetaFont.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20100219-2
++ Revision: 752368
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20100219-1
++ Revision: 718572
+- texlive-go
+- texlive-go
+- texlive-go
+- texlive-go
+
