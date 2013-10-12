@@ -1,18 +1,19 @@
-# revision 15878
+# revision 28628
 # category Package
 # catalog-ctan /fonts/go
-# catalog-date 2010-02-19 00:25:14 +0100
+# catalog-date 2012-05-17 22:49:03 +0200
 # catalog-license pd
 # catalog-version undef
 Name:		texlive-go
-Version:	20100219
-Release:	2
+Version:	20120517
+Release:	1
 Summary:	Fonts and macros for typesetting go games
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/go
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.source.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.doc.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -20,7 +21,7 @@ Requires(post):	texlive-kpathsea
 
 %description
 The macros provide for nothing more complicated than the
-standard 19x19 board; the fonts are written in MetaFont.
+standard 19x19 board; the fonts are written in Metafont.
 
 %post
     %{_sbindir}/texlive.post
@@ -70,29 +71,17 @@ standard 19x19 board; the fonts are written in MetaFont.
 %{_texmfdistdir}/fonts/tfm/public/go/go2whi20.tfm
 %{_texmfdistdir}/fonts/tfm/public/go/gosign50.tfm
 %{_texmfdistdir}/tex/latex/go/go.sty
+%doc %{_texmfdistdir}/doc/fonts/go/gomaps.ltx
 #- source
-%doc %{_texmfdistdir}/source/latex/go/gomaps.ltx
+%doc %{_texmfdistdir}/source/fonts/go/go.bat
+%doc %{_texmfdistdir}/source/fonts/go/go1.bat
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%setup -c -a0 -a1 -a2
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20100219-2
-+ Revision: 752368
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20100219-1
-+ Revision: 718572
-- texlive-go
-- texlive-go
-- texlive-go
-- texlive-go
-
+cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}

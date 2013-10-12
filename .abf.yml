@@ -1,3 +1,4 @@
 sources:
-  "go.source.tar.xz": eda79b889baac130a2058b0273e0a4b0ac0e046f
-  "go.tar.xz": 07e279fd07d881722b79a5286deb4d128dd61938
+  go.doc.tar.xz: 815fce0c7d1ae656c31acbe0e50c4dea6fd7e2c0
+  go.source.tar.xz: 824960700bd6f9a4585567effbf4c5778df70e86
+  go.tar.xz: 7e4676235ad387cfac1802272acf0d607ea5a47e
