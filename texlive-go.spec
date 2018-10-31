@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-go
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Fonts and macros for typesetting go games
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/go
