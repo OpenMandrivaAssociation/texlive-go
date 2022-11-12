@@ -1,19 +1,13 @@
-# revision 28628
-# category Package
-# catalog-ctan /fonts/go
-# catalog-date 2012-05-17 22:49:03 +0200
-# catalog-license pd
-# catalog-version undef
 Name:		texlive-go
-Version:	20190228
+Version:	28628
 Release:	1
 Summary:	Fonts and macros for typesetting go games
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/go
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -24,12 +18,12 @@ The macros provide for nothing more complicated than the
 standard 19x19 board; the fonts are written in Metafont.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -78,7 +72,8 @@ standard 19x19 board; the fonts are written in Metafont.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
