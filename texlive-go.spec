@@ -3,7 +3,7 @@ Version:	28628
 Release:	2
 Summary:	Fonts and macros for typesetting go games
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/go
+URL:		https://www.ctan.org/tex-archive/fonts/go
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/go.doc.r%{version}.tar.xz
